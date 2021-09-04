@@ -10,4 +10,3 @@ tensorboardX
 viphoneme
 vinorm
 eng-to-ipa==0.0.2
-underthesea==1.3.0
