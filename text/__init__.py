@@ -16,7 +16,7 @@ _apostrophe = re.compile(r"(?=\S*['])([a-zA-Z'-]+)")
 
 
 
-from viphoneme import syms, vi2IPA_split
+from text.viphoneme import syms, vi2IPA_split
 symbols = syms
 _symbol_to_id = {s: i for i, s in enumerate(symbols)}
 _id_to_symbol = {i: s for i, s in enumerate(symbols)}
@@ -31,7 +31,7 @@ def sequence_to_text(sequence):
 
 def text_to_sequence(text):
 
-    cleaner_names == "prenorm_viphoneme"
+    cleaner_names = "prenorm_viphoneme"
 
     if cleaner_names == "raw_viphoneme":
         sequence = []
@@ -53,7 +53,7 @@ def text_to_sequence(text):
     for i in phones:
         if i in _symbol_to_id:
             phones_id.append(_symbol_to_id[i])
-            #phones_id = [_symbol_to_id[i] for i in phones]
+            
     sequence.extend(phones_id)
 
     return sequence
@@ -163,3 +163,6 @@ def files_to_list(filename):
     return files
 
 HETERONYMS = set(files_to_list('data/heteronyms'))
+
+if __name__ == "__main__" :
+    print(text_to_sequence("/kw/a/1/ /ɛ/ɲ/4/ /c/u/p/6/ /c/ă/w/5/ /k/ɔ/5/_/tʰ/e/4/ /ɲ/i/n/2/ /tʰ/ɤ̆/j/5/ /x/a/5/ /ʐ/ɔ/3/ /,/ /m/a/tʃ/6/_/m/ă/w/5/ /m/ă/w/2/ /s/ɛ/ɲ/1/ /f/a/t/5/_/ʈ/iə/n/4/ /x/a/5/ /l/ɤ/n/5/ /./ /./"))
