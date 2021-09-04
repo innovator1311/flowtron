@@ -6,3 +6,8 @@ scipy==1.5.2
 Unidecode==1.0.22
 pillow
 tensorboardX
+
+viphoneme
+vinorm
+eng-to-ipa==0.0.2
+underthesea==1.3.0
